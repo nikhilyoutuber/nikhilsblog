@@ -3,43 +3,122 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="w3css.css">
-	<title>webpage using w3</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>calculator</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	font-family: arial;
+
+}
+h1{
+	text-align: center;
+	color: #fff;
+	font-size:18px;
+	margin-top: 10px;
+
+}
+.box{
+	margin: 50px;
+	background-color: #334ac4;
+	width: 300px;
+	height: 260px;
+	border: 3px solid #000;
+	border-radius: 10px;
+}
+input[type="text"]{
+	border: none;
+	width: 200px;
+	outline: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.calc{
+	margin-left: 45px;
+	margin-top: 10px;
+}
+.sum{
+	width: 50px;
+	padding: 4px 0px 4px 0px;
+}
+.sub{
+	width: 50px;
+	padding: 4px 0px 4px 0px;
+}
+.mul{
+	width: 50px;
+	padding: 4px 0px 4px 0px;
+}
+.division{
+	width: 50px;
+	padding: 4px 0px 4px 0px;
+}
+.result{
+	margin-left: 10px;
+	background-color: rgba(0, 0, 0, .6);
+	color: #fff;
+}
+.clear{
+	margin-left: 45px;
+	margin-top: 10px;
+	padding: 5px 80px;
+}
+</style>
 </head>
-<body class="w3-sand">
-	<!-- navbar-->
-	<div class="w3-top w3-bar w3-black">
-		<a href="webw3.html" class="w3-bar-item w3-button">Home</a>
-		<a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
-		<a href="about.html" class="w3-bar-item w3-button">About Us</a>
-		<a href="contact.html" class="w3-bar-item w3-button">Contact Us</a>
-		
-	</div>
-	<!-- starting contents-->
-	<div id="home" class="w3-content">
-		<img src="image/bg2.jpg" width="100%" class="w3--padding-large">
+<body>
+	<div class="box">
+	<h1>Calculator [By: Nikhil Prajapati]</h1><hr>
+		<input type="text" id="num1" class="num1" placeholder="enter your 1st number">
+		<input type="text" id="num2" class="num2" placeholder="enter your 2nd number"><br>
+		<input type="text" id="result" readonly class="result">
+		<div class="calc">
+		<button class="sum" id="sum" onclick="add ();">+</button>
+		<button class="sub" id="sub" onclick="sub ();">-</button>
+		<button class="mul" id="mul" onclick="mul ();">*</button>
+		<button class="division" id="division" onclick="divi ();">/</button>
 
-		<!-- image-->
-		
-
-		<!--about section-->
-		<div id="about" class="w3-container w3-padding-30">
-			<h1 class="w3-center">About Myself</h1>
-			<p>Hello! My name is Nikhil Prajapati from Utter Pradesh India, a tech enthusiasm, ssc aspirant and pursuing univerty with art stream. I love technology so I am learning web devlopment and programming.</p>
-		</div>
-		
 	</div>
-	<!--footer section-->
-	<footer style="margin-top:100%">
-	<div class="w3-container w3-black">
-		<h1>Follow us:</h1>
-		<div class="w3-xlarge w3-margin-button">
-			<a href="https://youtube.com/nikhilyoutuber" class="fa fa-youtube" style="text-decoration:none"></a>
-			<a href="https://facebook.com/nikhilyoutuber" class="fa fa-facebook" style="text-decoration:none"></a>
-			<a href="https://instagram.com/nikhilyoutuber" class="fa fa-instagram" style="text-decoration:none"></a>
-			<a href="https://twitter.com/nikhilyoutuber" class="fa fa-twitter" style="text-decoration:none"></a>
-		</div>
-		</footer>
+	<button class="clear" id="clear" onclick="clearall();">Clear All</button>
+</div>
+<script type="text/javascript">
+	function add(){
+	var n1,n2,res;
+	n1 = document.getElementById("num1").value;
+	n2 = document.getElementById("num2").value;
+	res = parseInt(n1)+parseInt(n2);
+	document.getElementById("result").value = res;
+}
+	function sub(){
+	var n1,n2,res;
+	n1 = document.getElementById("num1").value;
+	n2 = document.getElementById("num2").value;
+	res = parseInt(n1)-parseInt(n2);
+	document.getElementById("result").value = res;
+}
+	function mul(){
+	var n1,n2,res;
+	n1 = document.getElementById("num1").value;
+	n2 = document.getElementById("num2").value;
+	res = parseInt(n1)*parseInt(n2);
+	document.getElementById("result").value = res;
+}
+	function divi(){
+	var n1,n2,res;
+	n1 = document.getElementById("num1").value;
+	n2 = document.getElementById("num2").value;
+	res = parseInt(n1)/parseInt(n2);
+	document.getElementById("result").value = res;
+}
+
+	function clearall(){
+	document.getElementById("result").value = " ";
+	document.getElementById("num1").value = " ";
+	document.getElementById("num2").value = " ";
+	
+}
+
+</script>
 </body>
 </html>
